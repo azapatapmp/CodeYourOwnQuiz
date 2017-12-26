@@ -17,7 +17,9 @@ def select_guesses():
     user_input = ""
     while (user_input == ""):
         user_input = raw_input("Please select how many wrong guesses you want to make before you lose the game ([1-10]).\n")
-        if (int(user_input)>=1 and int(user_input)<=10):
+        range_low = 1
+        range_max = 10
+        if (int(user_input)>=range_low and int(user_input)<=range_max):
             wrong_guesses = int(user_input)
         else:
             user_input = ""
@@ -52,7 +54,7 @@ def process_sentences(prompt,answer,level,wrong_guesses):
     return None
 
 
-#Main:
+# Main:
 
 prompt=[["Immediately __1__ running the __2__, user is __3__ to select a difficulty level from easy / __4__ / hard"],#3 Prompts: Easy - Medium - Hard
         ["When __1__ guesses __2__, new __3__ shows with correct answer in the __4__ blank and a new prompt for the next blank"],
